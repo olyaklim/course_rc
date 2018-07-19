@@ -1,0 +1,313 @@
+---
+title: Layman - Blog about politics
+logo_desc: blog about politics
+news_prev:
+ - title: CNN could not verify the authenticity
+   image: img/pic/pic-news-1.jpg
+   commentcount: 12
+   descr: The bloodied bodies lay stuffed and tangled in the back of a pickup like garbage.
+ - title: How Much Do You Owe For Lunch? You Decide
+   image: img/pic/pic-news-2.jpg
+   commentcount: 12
+   descr: The bloodied bodies lay stuffed and tangled in the back of a pickup like garbage.
+ - title: Reid eyes deal to end stalemate over funding
+   image: img/pic/pic-news-3.jpg
+   commentcount: 12
+   descr: The bloodied bodies lay stuffed and tangled in the back of a pickup like garbage.
+ - title: Wall Street on Debt Deal So What?
+   image: img/pic/pic-news-4.jpg
+   commentcount: 12
+   descr: Dow drops more than 250 points as stock markets show no relief from Obama's
+
+hottest_video:
+ - title: CNN could not verify the authenticity
+   image: img/pic/pic-video-1.jpg
+   commentcount: 12
+   descr:   The bloodied bodies lay stuffed and tangled in the back of a pickup like garbage.
+ - title: Reids eyes deal to end stalemate over funding
+   image: img/pic/pic-video-2.jpg
+   commentcount: 12
+   descr:  The bloodied bodies lay stuffed and tangled in the back of a pickup like garbage.
+ - title: CNN could not verify the authenticity
+   image: img/pic/pic-video-3.jpg
+   commentcount: 12
+   descr:  The bloodied bodies lay stuffed and tangled in the back of a pickup like garbage.
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+
+	{% include "partials/_header.html" %}
+
+  <main class="main">
+    <div class="container">
+      <div class="all-news">
+
+        <div class="all-news__full">
+
+          <h2 class="visually-hidden">All news</h2>
+
+          <section class="all-news__banner">
+            <h3 class="visually-hidden">Popular news</h3>
+            <a class="title-sect" href="#">
+              <div class="title-sect__wrap">
+                <h4 class="title-sect__text  main-title  main-title--arrow">
+                  Gruesome video shows Syria brutality
+                </h4>
+
+                <span class="title-sect__pic"></span>
+
+              </div>
+              <div class="title-sect__pic-wrap">
+                <div class="title-sect__descr">
+                  As crackdowns against anti-government protesters continue across
+                </div>
+              </div>
+            </a>
+
+            <a class="news-ban" href="#">
+              <img class="news-ban__pic  full-pic" src="../img/pic/big-banner.jpg" alt="big-banner">
+
+              <p class="news-ban__label">
+                The bloodied bodies lay stuffed and tangled in the back of a pickup like garbage. Men lifted the bodies one by one and hurled from them from a bridge into a river below as cursing filled the air
+              </p>
+            </a>
+          </section>
+
+          <section class="all-news__news-prev  news-prev">
+            <h3 class="visually-hidden">Hot news</h3>
+            <ul class="news-prev__grid">
+
+              {% for n in news_prev %}
+
+              <li class="news-prev__item">
+                <article class="prev-new">
+                  <a class="prev-new__link" href="#" tabindex="0">
+                    <div class="prev-new__img-wrap">
+                      <div class="prev-new__img">
+                        <img class="prev-new__pic  full-pic" src="{{n.image}}" alt="news image">
+                      </div>
+                    </div>
+
+                    <div class="prev-new__desc  desc-news">
+                      <h4 class="desc-news__title">
+                        {{n.title}}
+                      </h4>
+
+                      <p class="desc-news__text">
+                        {{n.descr}}
+                      </p>
+
+                      <div class="desc-news__comment-wrap">
+                        <span class="desc-news__comment  comment-count">{{n.commentcount}}</span>
+                      </div>
+
+                    </div>
+                  </a>
+                </article>
+              </li>
+
+              {% endfor %}
+
+            </ul>
+          </section>
+
+          <section class="all-news__news-list">
+
+            <ul class="news-list">
+              <li class="news-list__item">
+                <div class="news-list__title">
+                  <a class="title-sect" href="#">
+
+                    <div class="title-sect__wrap">
+                      <h4 class="title-sect__text  main-title  main-title--arrow">
+                        In Syria, 'brother of a whore' gets tossed like trash
+                      </h4>
+
+                      <span class="title-sect__pic"></span>
+
+                    </div>
+
+                    <div class="title-sect__pic-wrap">
+                      <div class="title-sect__descr">
+                        As crackdowns against anti-government protesters
+                      </div>
+                    </div>
+
+                  </a>
+                </div>
+
+                <div class="news-list__img">
+                  <div class="news-list__img-wrap">
+                    <img class="news-list__pic" src="../img/pic/pic-list-news-1.jpg" alt="news image">
+                  </div>
+                </div>
+
+                <div class="news-list__desc">
+                  <a class="news-list__text" href="#">
+                  A federal judge in Ohio ruled Monday that former Rep. Steve Driehaus' defamation suit. In a case that could test the bounds of free speech, a former Democratic congressman has been allowed to proceed with his lawsuit against a prominent pro-life group that he claims contributed to his election defeat by spreading falsehoods about his record on abortion issues.  </a>
+
+                  <div class="news-list__foot">
+                    <div class="news-list__comment  comment-count">
+                      12
+                    </div>
+
+                    <div class="news-list__tags">
+                      <div class="news-list__tags-title">
+                        Tags:
+                      </div>
+
+                      <ul class="tags">
+                        <li><a href="#">Italy</a></li>
+                        <li><a href="#">Best wine</a></li>
+                        <li><a href="#">Spirit</a></li>
+                        <li><a href="#">World championship</a></li>
+                        <li><a href="#">Eat</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="news-list__social-list">
+                      <div class="news-list__social-title">
+                        Share:
+                      </div>
+
+                      <ul class="social-list">
+                        <li class="social-list__item">
+                          <a class="social-btn  social-btn--fb" href="#" target="_blank"  title="link facebook"></a>
+
+                        </li>
+
+                        <li class="social-list__item">
+                          <a class="social-btn  social-btn--tw" href="#" target="_blank"  title="link twitter"></a>
+                        </li>
+                      </ul>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </li>
+
+              <li class="news-list__item">
+                <div class="news-list__title">
+                  <a class="title-sect" href="#">
+
+                    <div class="title-sect__wrap">
+                      <h4 class="title-sect__text  main-title  main-title--arrow">
+                        Gruesome video shows Syria brutality
+                      </h4>
+
+                      <span class="title-sect__pic"></span>
+
+                    </div>
+
+                    <div class="title-sect__pic-wrap">
+                      <div class="title-sect__descr">
+                        As crackdowns against anti-government protesters continue across
+                      </div>
+                    </div>
+
+                  </a>
+                </div>
+
+                <div class="news-list__img">
+                  <div class="news-list__img-wrap">
+                    <img class="news-list__pic" src="../img/pic/pic-list-news-2.jpg" alt="news image">
+                  </div>
+                </div>
+
+                <div class="news-list__desc">
+                  <a class="news-list__text" href="#">
+                  In a case that could test the bounds of free speech, a former Democratic congressman has been allowed to proceed with his lawsuit against a prominent pro-life group that he claims contributed to his election defeat by spreading falsehoods about his record on abortion issues. A federal judge in Ohio ruled Monday that former Rep. Steve Driehaus' defamation suit.</a>
+
+                  <div class="news-list__foot">
+                    <div class="news-list__comment  comment-count">
+                      12
+                    </div>
+
+                    <div class="news-list__tags">
+                      <div class="news-list__tags-title">
+                        Tags:
+                      </div>
+
+                      <ul class="tags">
+                        <li><a href="#">Italy</a></li>
+                        <li><a href="#">Best wine</a></li>
+                        <li><a href="#">Spirit</a></li>
+                        <li><a href="#">World championship</a></li>
+                        <li><a href="#">Eat</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="news-list__social-list">
+                      <div class="news-list__social-title">
+                        Share:
+                      </div>
+
+                      <ul class="social-list">
+                        <li class="social-list__item">
+                          <a class="social-btn  social-btn--fb" href="#" target="_blank"  title="link facebook"></a>
+                        </li>
+
+                        <li class="social-list__item">
+                          <a class="social-btn  social-btn--tw" href="#" target="_blank"  title="link twitter"></a>
+                        </li>
+                      </ul>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </li>
+
+            </ul>
+          </section>
+
+        </div>
+
+        <aside class="all-news__aside">
+          <a class="all-news__aside-title  main-title" href="#">
+            <h3 class="main-title__text">Hottest video</h3>
+          </a>
+          <ul class="video-list">
+
+            {% for v in hottest_video %}
+
+            <li class="video-list__item  video-item">
+              <a class="video-item__img-wrap" href="#">
+                <img class="video-item__pic  full-pic" src="{{v.image}}" alt="news image">
+
+                <div class="video-item__btn  btn-video">
+                  {{mixins.icon('video-btn')}}
+                </div>
+              </a>
+
+              <a class="video-item__desc  desc-news" href="#">
+                <h4 class="desc-news__title">
+                  {{v.title}}
+                </h4>
+
+                <p class="desc-news__text">
+                  {{v.descr}}
+                  <span class="desc-news__comment  comment-count">{{v.commentcount}}</span>
+                </p>
+              </a>
+            </li>
+
+            {% endfor %}
+
+          </ul>
+        </aside>
+
+      </div>
+    </div>
+
+  </main>
+
+  {% include "partials/_footer.html" %}
+
+
+{% endblock %}

@@ -1,5 +1,95 @@
-body
-	background: #FFF
-	+css-lock(16, 50, 600, 1000)
-	line-height: 1.4
++font('georgiaRegular',Georgia)
++font('georgiaItalic',Georgia-Italic)
 
++font('barlowRegular',barlowcondensed-regular)
+
++font('LucidaRegular',lusida_unicode)
+
+=gRegular
+	font-family: georgiaRegular,sans-serif
+=gItalic
+	font-family: georgiaItalic,sans-serif
+=barlow
+	font-family: barlowRegular,sans-serif
+=lucida
+	font-family: LucidaRegular,sans-serif
+
+html
+	font-size: 12px
+	scroll-behavior: smooth
+
+body
+	display: flex
+	flex-direction: column
+	background-color: $bg-color
+	background-image: url(../img/bg/sky.jpg), url(../img/bg/sky_pattern.jpg)
+	background-repeat: no-repeat,repeat
+	background-size: 100%,150px
+	background-position: top,50%
+	color: $c-normal
+	font-weight: 400
+	+gRegular
+
+	+r($screen-lg)
+		background-image: none
+
+		&.load:before
+			display: none
+
+.container
+	max-width: 1000px
+	padding: 0 31px
+	margin: 0 auto
+	background-color: $container-color
+
+	+r($screen-lg)
+		padding: 0 10px
+
+	&--fluid
+		padding: 0
+
+		+r(960)
+			padding: 0
+
+svg
+	display: block
+	width: 100%
+	height: 100%
+	fill: currentColor
+
+.visually-hidden
+	position: absolute
+	width: 1px
+	height: 1px
+	margin: -1px
+	border: 0
+	padding: 0
+	clip: rect(0 0 0 0)
+	overflow: hidden
+
+.close-btn
+	display: block
+	width: 26px
+	height: 26px
+	padding: 3px
+	opacity: .6
+	transition: opacity $anim--long
+
+@keyframes a
+	0%,to
+		transform: translateX(0)
+
+	70%
+		transform: translateX(10px)
+
+@keyframes b
+	0%
+		transform: translate(0)
+
+	to
+		transform: translate(-160%)
+
+
+=rminmax($width1,$width2)
+	@media (min-width: $width1+ "px") and (max-width: $width2+ "px")
+    @content

@@ -1,3 +1,828 @@
-.block
+.btn-video
+	position: absolute
+	bottom: 9px
+	left: 8px
+	right: 0
+	z-index: 1
+	display: block
+	width: 35px
+	height: 35px
+	padding: 8px 7px 8px 9px
+	color: $bg-ico-video
+	background-color: $bg-btn-video
+	border-radius: $radius
+	transition: background-color $anim, color $anim--longest
+
+	&:active, &:hover
+		background-color: $bg-h2
+		color: #ffffff
+
+.logo
+	display: block
+	max-width: 273px
+	max-height: 90px
+
+	&__pic
+		max-width: 100%
+		margin-bottom: 11px
+
+	&__desc
+		display: flex
+		+lucida
+		font-size: 10px
+		line-height: 2.2
+		letter-spacing: 1.7px
+		text-transform: uppercase
+		text-decoration: none
+		color: $c-sub-logo
+		border-top: 1px solid $c-sub-logo
+		user-select: none
+
+.icon-video-btn
+	fill: $bg-ico-video
+	font-size: 19px
+
+.video-list
+	+r($screen-lg)
+		display: flex
+		flex-wrap: wrap
+		margin-left: -7px
+		margin-right: -7px
+
+	&__item
+		&:not(:last-child)
+			margin-bottom: 23px
+
+		+r($screen-lg)
+			width: 33.33%
+			padding: 0 7px
+			margin-bottom: 23px
+
+		+r(600)
+			width: 100%
+
+	&__link
+		display: block
+
+.video-item
+	display: block
+
+	&__desc
+		&:focus .desc-news__title, &:hover .desc-news__title
+			color: $bg-h2
+		&:focus .desc-news__text, &:hover .desc-news__text
+			color: $bg-hover-menu
+		&:focus
+			outline: none
+
+	&__pic
+		border-radius: $radius--small
+
+	&__img-wrap
+		position: relative
+		display: block
+		margin-bottom: 18px
+		padding-bottom: 92%
+
+		&:focus
+			outline: none
+
+			&::after
+				position: absolute
+				content: ""
+				left: 0
+				top: 0
+				width: 100%
+				height: 100%
+				background: linear-gradient(180deg, hsla(0, 0%, 100%, 0) 30%, rgba(0, 0, 0, 0.85))
+				transition: $anim--long
+
+		&:hover::after
+			position: absolute
+			content: ""
+			left: 0
+			top: 0
+			width: 100%
+			height: 100%
+			background: linear-gradient(180deg, hsla(0, 0%, 100%, 0) 30%, rgba(0, 0, 0, 0.85))
+			transition: $anim--long
+
+		&:focus .btn-video, &:hover .btn-video
+			background-color: $bg-h2
+
+.desc-news
+	display: block
+	padding: 0 2px
+	text-decoration: none
+	color: inherit
+
+	&__title
+		margin-bottom: 8px
+		color: $c-link-news
+		line-height: 1.5
+		font-weight: initial
+		text-decoration: underline
+
+	&__text
+		font-size: 11px
+		line-height: 1.63
+		font-style: italic
+
+	&__comment-wrap
+		margin-top: -4px
+		margin-right: -6px
+		text-align: right
+
+	&__comment
+		margin-left: 8px
+
+.comment-count
+	display: inline-block
+	padding-left: 21px
+	line-height: 1.63
+	font-style: italic
+	color: $c-comment
+	background-image: url(../img/ico/speech-bubble.png)
+	background-position: left 4px
+	background-repeat: no-repeat
+
+.contain-img
+	position: absolute
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	max-width: 100%
+	max-height: 100%
+	margin: auto
+
+.full-pic
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	object-fit: cover
+
+.hotest
 	display: flex
-	// remove this
+	align-items: center
+
+	&__ico
+		margin-right: 15px
+		padding: 2px 4px
+		+barlow
+		font-size: 14px
+		font-style: normal
+		line-height: 1
+		text-transform: uppercase
+		color: #ffffff
+		background: $bg-hotest
+		border-radius: $radius--small
+		user-select: none
+		text-decoration: none
+		transition: background-color $anim
+
+	&__link
+		display: flex
+		align-items: center
+		width: 100%
+		color: $c-normal
+		text-decoration: none
+		font-style: italic
+		font-size: 11px
+		line-height: 1.63
+		transition: background-color $anim
+
+		&:focus, &:hover
+			color: $bg-hover-menu
+			outline: none
+
+		&:focus .hotest__ico, &:hover .hotest__ico
+			background: $bg-h2
+
+	&__text
+		flex-grow: 2
+
+	&__link-arrow
+		position: relative
+		flex-grow: 3
+		animation: a 2s linear infinite
+
+		&::before
+			content: ""
+			display: block
+			width: 5px
+			height: 5px
+			border: 1px solid
+			border-top: none
+			border-left: none
+			transform: rotate(-45deg)
+			transition: transform $anim
+
+.main-menu
+	position: relative
+	display: flex
+	flex-wrap: wrap
+
+	+r($screen-lg)
+		position: fixed
+		top: 0
+		left: 0
+		z-index: 4
+		display: none
+		width: 100%
+		height: 100%
+		padding: 3em
+		background-color: $bg-hover-menu
+		overflow: auto
+		opacity: 0
+		transition: $anim--longest
+
+		&.active
+			display: block
+
+		&.open
+			opacity: 1
+
+	&__mobil-close
+		display: none
+		position: fixed
+		right: 0
+		top: 0
+		padding: 1em
+		color: $c-topmenu
+
+		.close-btn
+			border: 1px solid
+
+		+r($screen-lg)
+			display: block
+
+	&__item:not(:last-child)
+		padding-right: 5px
+
+	&__link
+		display: block
+		padding: 5px 12px
+		color: $c-logo
+		+barlow
+		font-size: 18px
+		line-height: 1.22
+		text-transform: uppercase
+		text-decoration: none
+		transition: background-color $anim
+
+		&.active, &:hover
+			background: $bg-hover-menu
+
+		&.active, &:focus, &:hover
+			box-shadow: 1px 1px 0 hsla(0, 0%, 100%, 0.2), inset 1px 1px 1px rgba(0, 0, 0, 0.5)
+			border-radius: $radius
+
+		&:focus
+			outline: none
+
+.prev-new
+	display: block
+	padding: 16px
+	padding-bottom: 7px
+	background-color: #ffffff
+	border-radius: $radius--small
+	box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.14)
+
+	&:hover
+		box-shadow: none
+
+	&__link
+		display: block
+		color: inherit
+		text-decoration: none
+
+		&:focus, &:hover
+			outline: none
+		&:focus .desc-news__title, &:hover .desc-news__title
+			color: $bg-h2
+		&:focus .desc-news__text, &:hover .desc-news__text
+			color: $bg-hover-menu
+
+	&__pic
+		transition: all $anim linear
+
+	&__title
+		letter-spacing: .06em
+		font-weight: 700
+
+	&__title
+		margin-bottom: 1em
+		text-align: center
+
+	&__img-wrap
+		overflow: hidden
+
+	&__img
+		position: relative
+		display: block
+		overflow: hidden
+		padding-bottom: 85%
+		margin-bottom: 13px
+
+		&:hover .prev-new__pic
+			transform: scale(1.03)
+			object-fit: cover
+
+	&__text
+		margin-bottom: 1em
+		line-height: 1.4
+		font-size: 1em
+		letter-spacing: 0.03em
+
+.title-sect
+	display: flex
+	align-items: center
+	margin-bottom: 5px
+	padding-right: 13px
+	text-decoration: none
+	color: $c-normal
+	background-color: $bg-h3
+	border-radius: $radius--small
+	overflow: hidden
+
+	+r(1023)
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		background-color: transparent
+
+	&__text
+		position: relative
+		z-index: 1
+
+	&__wrap
+		position: relative
+		flex-shrink: 0
+		margin-right: 35px
+
+	&__pic
+		right: 0
+		position: absolute
+		top: 0
+		bottom: 0
+		margin: auto
+
+		&::before
+			position: absolute
+			top: 0
+			bottom: 0
+			margin: auto
+			content: ""
+			transform: rotate(45deg)
+			background-color: $bg-h2
+			width: 27px
+			height: 27px
+			right: -12px
+			border-radius: $radius
+
+	&__pic-wrap
+		height: 35px
+		line-height: 35px
+		overflow: hidden
+
+		&:focus .title-sect__descr, &:hover .title-sect__descr
+			animation: b 9s infinite linear
+			outline: none
+
+		+r($screen-lg)
+			width: auto
+			height: 26px
+			line-height: 26px
+
+	&__descr
+		display: block
+		white-space: nowrap
+
+		&:focus
+			animation: b 9s infinite linear
+			outline: none
+
+		+r($screen-lg)
+			text-decoration: underline
+			white-space: normal
+
+.main-title
+	display: block;
+	overflow: hidden
+	z-index: 1
+	height: 35px
+	padding: 0 11px
+	font-size: 18px
+	font-weight: initial
+	+barlow
+	line-height: 34px
+	color: $c-logo
+	text-decoration: none;
+	text-transform: uppercase
+	background: $bg-h2
+	border-radius: $radius
+
+	&__text
+	    font-size: initial
+	    font-weight: initial
+
+	&--arrow
+		padding-right: 37px
+
+.news-ban
+	position: relative
+	z-index: 1
+	display: flex
+	overflow: hidden
+	padding-bottom: 35.6%
+	border-radius: $radius--small
+	text-decoration: none
+
+	&:focus::after, &:hover::after
+		position: absolute
+		content: ""
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		background: linear-gradient(180deg, hsla(0, 0%, 100%, 0) 30%, rgba(0, 0, 0, 0.35))
+		transition: $anim--long
+
+	&:focus .news-ban__label, &:hover .news-ban__label
+		background-color: $bg-hover-menu
+
+	+r($screen-lg)
+		flex-direction: column
+		padding-bottom: 0
+
+	&__pic
+		+r($screen-lg)
+			position: static
+			top: 0
+			left: 0
+
+	&__label
+		position: absolute
+		bottom: 36px
+		left: 40px
+		max-width: 336px
+		padding: 20px 18px
+		background-color: $bg-banner
+		line-height: 1.5
+		border-radius: $radius
+		font-size: 12px
+		color: #ffffff
+		text-align: justify
+		transition: opacity $anim--long
+		z-index: 1
+
+		+r($screen-lg)
+			position: relative
+			bottom: auto
+			left: auto
+			border-radius: $radius $radius 0 0
+			max-width: none
+			order: -1
+
+.news-list
+	padding-bottom: 10px
+
+	&__item
+		display: grid
+		grid-gap: 0
+
+		&:not(last-child)
+			margin-bottom: 23px
+
+		+rmin($screen-sm)
+			grid-template-columns: 1fr 1fr 1fr 1fr
+			grid-gap: 10px
+
+	&__img
+		+r($screen-sm)
+			margin-bottom: 20px
+
+	&__img-wrap
+		position: relative
+		display: block
+		padding-bottom: 76%
+
+	&__pic
+		position: absolute
+		top: 0
+		left: 50%
+		min-width: 100%
+		height: 100%
+		border-radius: $radius--small
+		object-fit: cover
+		transform: translateX(-50%)
+
+	&__comment
+		margin-right: 3px
+
+	&__title
+		+rmin(1024)
+			grid-row-start: 1
+			grid-column-start: 1
+			grid-column-end: 5
+
+		+rminmax(768,1023)
+			grid-row-start: 1
+			order: 2
+			grid-column-start: 3
+			grid-column-end: 5
+
+	&__img
+		+rmin(1024)
+			grid-row-start: 2
+			grid-column-start: 1
+			grid-column-end: 2
+			align-self: center
+
+		+rminmax(768,1023)
+			grid-row-start: 1
+			grid-row-end: 3
+			grid-column-start: 1
+			grid-column-end: 3
+
+	&__desc
+		+rmin(1024)
+			padding: 25px
+			grid-column-start: 2
+			grid-column-end: 5
+			padding: 20px 13px
+
+		+rminmax(768,1023)
+			grid-column-start: 3
+			grid-column-end: 5
+
+	&__foot
+		justify-content: space-between
+		padding-right: 39px
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+
+	&__tags
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		margin-right: 5px
+
+	&__tags-title
+		margin-right: 10px
+
+	&__social-list
+		display: flex
+		align-items: center
+
+	&__social-title
+		margin-right: 13px
+
+	&__text
+		display: block
+		margin-bottom: 17px
+		line-height: 1.5
+		color: inherit
+		text-decoration: none
+
+		&:focus, &:hover
+			color: $bg-hover-menu
+			outline: none
+
+.social-list
+	display: flex
+
+	&__item:not(:last-child)
+		margin-right: 4px
+
+.social-btn
+	position: relative
+	display: block
+	width: 16px
+	height: 16px
+	background-position: 50%
+	background-repeat: no-repeat
+	background-image: url(../img/ico/ico-fb.png)
+
+	&:hover
+		opacity: 0.8
+
+	&--fb
+		background-image: url(../img/ico/ico-fb.png)
+
+	&--tw
+		background-image: url(../img/ico/ico-tw.png)
+
+.tags
+	display: flex
+	flex-wrap: wrap
+
+	> li
+		position: relative
+
+		&:not(:last-child)
+			margin-right: 1px
+
+			a::before
+				content: ","
+				position: absolute
+				right: 0
+				bottom: 0
+				color: $symbol-color
+	li > a
+		position: relative
+		display: block
+		padding-right: 5px
+		color: $c-tag
+		font-style: italic
+		line-height: 1.5
+		text-decoration: underline
+
+		&:focus, &:hover
+			color: $bg-h2
+			outline: none
+
+.header-page
+	margin-top: 33px
+
+	+r($screen-lg)
+		margin-top: 0
+
+	+r($screen-xs)
+		display: flex
+		flex-direction: column
+
+	&__top-panel > .container:first-child
+		border-radius: $radius--big $radius--big 0 0
+		background: linear-gradient(180deg, #ffffff, $bg-gradient)
+
+	&__hot
+		padding: 11px 32px
+		background-color: $container-color
+		border-radius: $radius--big $radius--big 0 0
+		background: linear-gradient(180deg, #ffffff, $bg-gradient)
+
+	&__main-panel
+		display: flex
+		padding: 23px 31px
+		background-color: $bg-header
+		background-image: url(../img/bg/bg-header.jpg)
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: top
+		color: #ffffff
+
+		+r($screen-lg)
+			justify-content: space-between
+
+		+r($screen-xs)
+			flex-direction: column
+			background-image: none
+			align-items: center
+			padding: 0
+
+	&__logo
+		position: relative
+		margin-right: 29px
+		flex-shrink: 0
+		overflow: hidden
+
+		+r($screen-lg)
+			margin-right: 20px
+
+		+r($screen-xs)
+			margin-right: 0
+			padding: 20px 10px
+
+	&__menus
+		display: flex
+		flex-direction: column
+
+		+r($screen-lg)
+			flex-direction: row
+
+		+r($screen-xs)
+			align-items: center
+			justify-content: space-between
+			width: 100%
+			padding: 10px
+			background-color: #fbfbfb
+
+	&__open-btn
+		display: none
+		border: 1px solid #730001
+		padding: 6px
+		border-radius: $radius
+		margin-left: auto
+		color: $c-logo
+		background-color: $bg-h2
+
+		+r($screen-lg)
+			display: block
+
+		+r($screen-xs)
+			border: none
+
+.services-menu
+	display: flex
+	flex-wrap: wrap
+
+	+r($screen-sm)
+		flex-direction: column
+
+	&__link
+		display: block
+		padding: 5px 12px
+		color: $c-topmenu
+		+barlow
+		font-size: 14px
+		line-height: 1.57
+		text-transform: uppercase
+		text-decoration: none
+		transition: color $anim
+
+		&:focus, &:hover
+			color: $c-logo
+			text-decoration: underline
+			outline: none
+
+		+r($screen-xs)
+			padding: 3px
+			line-height: 1
+
+			&:focus, &:hover
+				color: $bg-hover-menu
+
+.all-news
+	display: flex
+	padding-top: 30px
+	padding-bottom: 20px
+
+	+r($screen-lg)
+		flex-direction: column
+
+	&__full
+		position: relative
+		flex-grow: 1
+
+	&__aside
+		flex-shrink: 0
+		width: 187px
+		margin-left: 28px
+
+		+r($screen-lg)
+			width: auto
+			margin-left: 0
+
+	&__aside-title
+		margin-bottom: 5px
+
+.news-prev
+	margin-bottom: 43px
+	padding-top: 15px
+
+	&__title
+		margin-bottom: 1.2em
+
+	&__grid
+		display: flex
+		flex-wrap: wrap
+		margin-right: -7px
+		margin-left: -7px
+
+	&__item
+		width: 25%
+		padding: 0 7px
+
+		+r($screen-lg)
+			width: 50%
+
+			&:not(:last-child)
+				margin-bottom: 20px
+
+		+r($screen-sm)
+			width: 100%
+
+.footer-page
+	position: relative
+	margin-top: auto
+	padding: 280px 0 80px
+	font-size: 1rem
+
+	&::after
+		position: absolute
+		content: ""
+		left: 0
+		top: 0
+		z-index: 2
+		width: 100%
+		height: 100%
+		background: linear-gradient(180deg, hsla(0, 0%, 100%, 0) 48%, rgba(0, 0, 0, 0.15))
+		transition: $anim--long
+
+	&__info > .container
+		background-color: transparent
