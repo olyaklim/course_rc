@@ -1,22 +1,12 @@
-+font('georgiaRegular',Georgia)
-+font('georgiaItalic',Georgia-Italic)
++font('barlowRegular', barlowcondensed-regular)
 
-+font('barlowRegular',barlowcondensed-regular)
-
-+font('LucidaRegular',lusida_unicode)
-
-=gRegular
-	font-family: georgiaRegular,sans-serif
-=gItalic
-	font-family: georgiaItalic,sans-serif
-=barlow
-	font-family: barlowRegular,sans-serif
-=lucida
-	font-family: LucidaRegular,sans-serif
+=georgia-font
+	font-family: "Georgia", serif
+=barlow-font
+	font-family: barlowRegular, sans-serif
 
 html
 	font-size: 12px
-	scroll-behavior: smooth
 
 body
 	display: flex
@@ -28,13 +18,10 @@ body
 	background-position: top,50%
 	color: $c-normal
 	font-weight: 400
-	+gRegular
+	+georgia-font
 
 	+r($screen-lg)
 		background-image: none
-
-		&.load:before
-			display: none
 
 .container
 	max-width: 1000px
@@ -89,7 +76,3 @@ svg
 	to
 		transform: translate(-160%)
 
-
-=rminmax($width1,$width2)
-	@media (min-width: $width1+ "px") and (max-width: $width2+ "px")
-    @content

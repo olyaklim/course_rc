@@ -29,9 +29,7 @@
               <div class="header-page__logo">
                 <h1 class="visually-hidden">Layman - Blog about politics</h1>
                 <a class="logo">
-                  <img class="logo__pic" width="142" height="47" src="img/logo.svg" alt="Logo Layman">
-                  <span class="logo__desc">blog about politics</span>
-                </a>
+                  <img class="logo__pic" width="146" height="75" src="img/pic/logo.png" alt="Logo Layman"> </a>
               </div>
               <div class="header-page__menus">
                 <ul class="header-page__services-menu  services-menu">
@@ -47,15 +45,17 @@
                 </ul>
                 <nav class="header-page__nav">
                   <h2 class="visually-hidden">Navigation</h2>
-                  <button class="header-page__open-btn" type="button" data-modal="menu-1">Menu</button>
+                  <button class="header-page__open-btn" type="button" title="Menu" data-modal="menu-1">
+                    <span class="header-page__menu-line"></span>
+                  </button>
+                  <div class="header-page__mobil-close">
+                    <button class="close-btn" type="button" data-close>
+                      <svg class="icon icon-close">
+                        <use xlink:href="img/sprite.svg#icon-close"></use>
+                      </svg>
+                    </button>
+                  </div>
                   <ul class="main-menu" data-id="menu-1">
-                    <li class="main-menu__mobil-close">
-                      <button class="close-btn" type="button" data-close>
-                        <svg>
-                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
-                        </svg>
-                      </button>
-                    </li>
                     <li class="main-menu__item">
                       <a class="main-menu__link" href="#"> Main street </a>
                     </li>
@@ -63,7 +63,7 @@
                       <a class="main-menu__link" href="#"> Washington dc </a>
                     </li>
                     <li class="main-menu__item">
-                      <a class="main-menu__link  active" href="#"> Wall street </a>
+                      <a class="main-menu__link  is-active" href="#"> Wall street </a>
                     </li>
                     <li class="main-menu__item">
                       <a class="main-menu__link" href="#"> Statewide </a>
@@ -100,10 +100,25 @@
                     <div class="title-sect__descr"> As crackdowns against anti-government protesters continue across </div>
                   </div>
                 </a>
-                <a class="news-ban" href="#">
-                  <img class="news-ban__pic  full-pic" src="img/pic/big-banner.jpg" alt="big-banner">
-                  <p class="news-ban__label"> The bloodied bodies lay stuffed and tangled in the back of a pickup like garbage. Men lifted the bodies one by one and hurled from them from a bridge into a river below as cursing filled the air </p>
-                </a>
+                <div class="all-news__banner-wrap">
+                  <!-- slide -->
+                  <div class="news-ban">
+                    <div class="news-ban__item  js-news-ban">
+                      <a class="news-ban__link" title="big-banner" href="#" style="background: url(img/pic/big-banner.jpg) center center / cover">
+                        <p class="news-ban__label"> The bloodied bodies lay stuffed and tangled in the back of a pickup like garbage. Men lifted the bodies one by one and hurled from them from a bridge into a river below as cursing filled the air </p>
+                      </a>
+                      <a class="news-ban__link" title="big-banner" href="#" style="background: url(img/pic/big-banner.jpg) center center / cover">
+                        <p class="news-ban__label"> The bloodied bodies lay stuffed and tangled in the back of a pickup like garbage. Men lifted the bodies one by one and hurled from them from a bridge into a river below as cursing filled the air </p>
+                      </a>
+                      <a class="news-ban__link" title="big-banner" href="#" style="background: url(img/pic/big-banner.jpg) center center / cover">
+                        <p class="news-ban__label"> The bloodied bodies lay stuffed and tangled in the back of a pickup like garbage. Men lifted the bodies one by one and hurled from them from a bridge into a river below as cursing filled the air </p>
+                      </a>
+                      <a class="news-ban__link" title="big-banner" href="#" style="background: url(img/pic/big-banner.jpg) center center / cover">
+                        <p class="news-ban__label"> The bloodied bodies lay stuffed and tangled in the back of a pickup like garbage. Men lifted the bodies one by one and hurled from them from a bridge into a river below as cursing filled the air </p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </section>
               <section class="all-news__news-prev  news-prev">
                 <h3 class="visually-hidden">Hot news</h3>
@@ -194,33 +209,31 @@
                     </div>
                     <div class="news-list__img">
                       <div class="news-list__img-wrap">
-                        <img class="news-list__pic" src="img/pic/pic-list-news-1.jpg" alt="news image"> </div>
+                        <img class="news-list__pic" width="169" height="129" src="img/pic/pic-list-news-1.jpg" alt="news image"> </div>
                     </div>
                     <div class="news-list__desc">
                       <a class="news-list__text" href="#"> A federal judge in Ohio ruled Monday that former Rep. Steve Driehaus' defamation suit. In a case that could test the bounds of free speech, a former Democratic congressman has been allowed to proceed with his lawsuit against a prominent
                         pro-life group that he claims contributed to his election defeat by spreading falsehoods about his record on abortion issues. </a>
                       <div class="news-list__foot">
-                        <div class="news-list__comment  comment-count"> 12 </div>
-                        <div class="news-list__tags">
-                          <div class="news-list__tags-title"> Tags: </div>
-                          <ul class="tags">
-                            <li>
-                              <a href="#">Italy</a>
-                            </li>
-                            <li>
-                              <a href="#">Best wine</a>
-                            </li>
-                            <li>
-                              <a href="#">Spirit</a>
-                            </li>
-                            <li>
-                              <a href="#">World championship</a>
-                            </li>
-                            <li>
-                              <a href="#">Eat</a>
-                            </li>
-                          </ul>
-                        </div>
+                        <div class="news-list__comment  comment-count  comment-count--big"> 12 </div>
+                        <dl class="news-list__tags  tags">
+                          <dt class="tags__term">Tags:</dt>
+                          <dd class="tags__descr">
+                            <a class="tags__link" href="#">Italy</a>
+                          </dd>
+                          <dd class="tags__descr">
+                            <a class="tags__link" href="#">Best wine</a>
+                          </dd>
+                          <dd class="tags__descr">
+                            <a class="tags__link" href="#">Spirit</a>
+                          </dd>
+                          <dd class="tags__descr">
+                            <a class="tags__link" href="#">World championship</a>
+                          </dd>
+                          <dd class="tags__descr">
+                            <a class="tags__link" href="#">Eat</a>
+                          </dd>
+                        </dl>
                         <div class="news-list__social-list">
                           <div class="news-list__social-title"> Share: </div>
                           <ul class="social-list">
@@ -249,33 +262,31 @@
                     </div>
                     <div class="news-list__img">
                       <div class="news-list__img-wrap">
-                        <img class="news-list__pic" src="img/pic/pic-list-news-2.jpg" alt="news image"> </div>
+                        <img class="news-list__pic" width="169" height="129" src="img/pic/pic-list-news-2.jpg" alt="news image"> </div>
                     </div>
                     <div class="news-list__desc">
                       <a class="news-list__text" href="#"> In a case that could test the bounds of free speech, a former Democratic congressman has been allowed to proceed with his lawsuit against a prominent pro-life group that he claims contributed to his election defeat by spreading falsehoods
                         about his record on abortion issues. A federal judge in Ohio ruled Monday that former Rep. Steve Driehaus' defamation suit.</a>
                       <div class="news-list__foot">
-                        <div class="news-list__comment  comment-count"> 12 </div>
-                        <div class="news-list__tags">
-                          <div class="news-list__tags-title"> Tags: </div>
-                          <ul class="tags">
-                            <li>
-                              <a href="#">Italy</a>
-                            </li>
-                            <li>
-                              <a href="#">Best wine</a>
-                            </li>
-                            <li>
-                              <a href="#">Spirit</a>
-                            </li>
-                            <li>
-                              <a href="#">World championship</a>
-                            </li>
-                            <li>
-                              <a href="#">Eat</a>
-                            </li>
-                          </ul>
-                        </div>
+                        <div class="news-list__comment  comment-count  comment-count--big"> 12 </div>
+                        <dl class="news-list__tags  tags">
+                          <dt class="tags__term">Tags:</dt>
+                          <dd class="tags__descr">
+                            <a class="tags__link" href="#">Italy</a>
+                          </dd>
+                          <dd class="tags__descr">
+                            <a class="tags__link" href="#">Best wine</a>
+                          </dd>
+                          <dd class="tags__descr">
+                            <a class="tags__link" href="#">Spirit</a>
+                          </dd>
+                          <dd class="tags__descr">
+                            <a class="tags__link" href="#">World championship</a>
+                          </dd>
+                          <dd class="tags__descr">
+                            <a class="tags__link" href="#">Eat</a>
+                          </dd>
+                        </dl>
                         <div class="news-list__social-list">
                           <div class="news-list__social-title"> Share: </div>
                           <ul class="social-list">
@@ -309,7 +320,7 @@
                   </a>
                   <a class="video-item__desc  desc-news" href="#">
                     <h4 class="desc-news__title"> CNN could not verify the authenticity </h4>
-                    <p class="desc-news__text"> The bloodied bodies lay stuffed and tangled in the back of a pickup like garbage.
+                    <p class="desc-news__text  desc-news__text--video"> The bloodied bodies lay stuffed and tangled in the back of a pickup like garbage.
                       <span class="desc-news__comment  comment-count">12</span>
                     </p>
                   </a>
@@ -325,7 +336,7 @@
                   </a>
                   <a class="video-item__desc  desc-news" href="#">
                     <h4 class="desc-news__title"> Reids eyes deal to end stalemate over funding </h4>
-                    <p class="desc-news__text"> The bloodied bodies lay stuffed and tangled in the back of a pickup like garbage.
+                    <p class="desc-news__text  desc-news__text--video"> The bloodied bodies lay stuffed and tangled in the back of a pickup like garbage.
                       <span class="desc-news__comment  comment-count">12</span>
                     </p>
                   </a>
@@ -341,7 +352,7 @@
                   </a>
                   <a class="video-item__desc  desc-news" href="#">
                     <h4 class="desc-news__title"> CNN could not verify the authenticity </h4>
-                    <p class="desc-news__text"> The bloodied bodies lay stuffed and tangled in the back of a pickup like garbage.
+                    <p class="desc-news__text  desc-news__text--video"> The bloodied bodies lay stuffed and tangled in the back of a pickup like garbage.
                       <span class="desc-news__comment  comment-count">12</span>
                     </p>
                   </a>
@@ -351,21 +362,14 @@
           </div>
         </div>
       </main>
-      <footer class="footer-page" id="sect-6">
+      <footer class="footer-page">
         <div class="footer-page__info">
           <div class="container  container--fluid">
             <a class="footer-page__logo  logo">
-              <img class="logo__pic" src="img/logo_min.svg" alt="Logo Layman"> </a>
+              <img class="logo__pic" width="81" height="13" src="img/pic/logo_min.png" alt="Logo Layman"> </a>
           </div>
         </div>
       </footer>
-      <div hidden="">
-        <svg id="svg-sprite">
-          <symbol id="close" viewBox="0 0 18 18">
-            <path d="M18 1.41L16.59 0 9 7.59 1.41 0 0 1.41 7.59 9 0 16.59 1.41 18 9 10.41 16.59 18 18 16.59 10.41 9z"></path>
-          </symbol>
-        </svg>
-      </div>
     </div>
     <!-- END content -->
     <!-- BEGIN scripts -->
